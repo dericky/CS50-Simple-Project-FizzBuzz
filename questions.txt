@@ -1,0 +1,4 @@
+0. All dimensions between 3x3 and 9x9 are allowed
+1. Two Dimensional Array
+2. greet()
+3. init, draw, move, won
