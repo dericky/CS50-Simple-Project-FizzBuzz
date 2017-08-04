@@ -1,0 +1,12 @@
+1.  stdint defines ints with standard widths of bytes (8, 16, etc)
+2.  This determines the size of these ints across all systems, which helps prevent the introduction of bugs caused by different platforms interpreting ints as varying bit sizes
+3.  Byte: 8, DWord: 32, LONG: 32, WORD: 16
+4.  66, and 77
+5.  biSize is the size of the image, whereas bfSize includes the header information as well
+6.  That means that the image is top-down
+7.  WORD biBitCount; 
+8.  a file could either by not opened or not created
+9.  We are always only reading in 1 file at a time
+10. 1
+11. fseek is our file position indicator
+12. SEEK_CUR is  where we currently are in the file
