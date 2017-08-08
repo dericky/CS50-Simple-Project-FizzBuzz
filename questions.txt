@@ -1,0 +1,7 @@
+0.  maxlength for a word
+1.  getrusage gets usage statistics about the resources used 
+2.  16
+3.  TODO
+4.  TODO
+5.  TODO
+6.  The parameters passed in should never be able to be changed by the program, hence the const
