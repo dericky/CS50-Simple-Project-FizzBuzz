@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    C$50 Home
+{% endblock %}
+
+{% block main %}
+   <div class="row">
+       <h1>Welcome to C$50, {{user}}</h1>
+   </div>
+   <div class="row">
+       <div class="col-lg-6">
+           <div class="panel panel-default">
+               <div class="panel-heading"><h2>Funds</h2><br></div>
+               <div class="panel-body"><h3>${{cash[0]["cash"]|round(2, 'floor')}}</h3></div>
+           </div>
+       </div>
+       <div class="col-lg-6">
+           <div class="panel panel-default">
+               <div class="panel-heading"><h2>Portfolio</h2><br></div>
+               <div class="panel-body">
+                    <table class="standard-table">
+                        <thead>
+                            <tr>
+                                <th>Ticker</th>
+                                <th>Number of Shares</th>
+                                <th>Average Price</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        {% block stocks %}
+                            {% for i in range(0, stocks|length): %}
+                                {% if stocks[i]["SUM(number_shares)"] > 0 %}
+                                <tr>
+                                    <td>{{stocks[i]["stock"]}}</td>
+                                    <td>{{stocks[i]["SUM(number_shares)"]}}</td>
+                                    <td>${{stocks[i]["AVG(price)"]|round(2, 'floor')}}</td>
+                                </tr>
+                                {% endif %}
+                            {% endfor %}
+                        {% endblock %}
+                        </tbody>
+                    </table>    
+               </div>
+           </div>
+       </div>
+   </div>
+{% endblock %}

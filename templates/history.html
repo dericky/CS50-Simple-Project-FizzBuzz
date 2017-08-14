@@ -1,0 +1,40 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    C$50 Home
+{% endblock %}
+
+{% block main %}
+   <div class="row">
+       <h1>Purchase and Sell History for {{user}}</h1>
+   </div>
+   <div class="row">
+       <div class="panel panel-default">
+           <div class="panel-heading"><h2>History</h2><br></div>
+           <div class="panel-body">
+                <table class="standard-table">
+                    <thead>
+                        <tr>
+                            <th>Ticker</th>
+                            <th>Number of Shares</th>
+                            <th>Average Price</th>
+                            <th>Date</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    {% block stocks %}
+                        {% for i in range(0, stocks|length): %}
+                            <tr>
+                                <td>{{stocks[i]["stock"]}}</td>
+                                <td>{{stocks[i]["number_shares"]}}</td>
+                                <td>${{stocks[i]["price"]|round(2, 'floor')}}</td>
+                                <td>{{stocks[i]["date"]}}</td>
+                            </tr>
+                        {% endfor %}
+                    {% endblock %}
+                    </tbody>
+                </table>    
+           </div>
+       </div>
+   </div>
+{% endblock %}
