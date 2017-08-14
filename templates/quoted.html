@@ -1,0 +1,12 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Quote
+{% endblock %}
+
+{% block main %}
+<div class="row">
+    <h1>{{result["name"]}} ({{result["symbol"]}})</h1>
+    <h2>Current Price: {{result["price"]}}</h2>
+</div>
+{% endblock %}
